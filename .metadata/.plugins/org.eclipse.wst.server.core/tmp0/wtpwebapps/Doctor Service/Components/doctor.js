@@ -14,25 +14,25 @@ $(document).ready(function()
 //SAVE======================================
 $(document).on("click", "#btnSave", function(event)
 {
-//clear alerts-----------------------
-$("#alertSuccess").text("");
-$("#alertSuccess").hide();
-$("#alertError").text("");
-$("#alertError").hide();
+	//clear alerts-----------------------
+	$("#alertSuccess").text("");
+	$("#alertSuccess").hide();
+	$("#alertError").text("");
+	$("#alertError").hide();
 
-//Form validation-------------------------
-var status = validationDoctorForm();
-if(status != true)
-{
-$("#alertError").text(status);
-$("#alertError").show();
-return;
-}
+	//Form validation-------------------------
+	var status = validationDoctorForm();
+	if(status != true)
+	{
+		$("#alertError").text(status);
+		$("#alertError").show();
+		return;
+	}
 
-//If valid-------------------------
-var type = ($("#hiddoctorIDSave").val() == "" ) ? "POST" : "PUT";
+	//If valid-------------------------
+	var type = ($("#hiddoctorIDSave").val() == "" ) ? "POST" : "PUT";
 
-$.ajax(
+	$.ajax(
 		{
 		url : "DoctorAPI",
 		type : type,
@@ -47,35 +47,34 @@ $.ajax(
 
 function onDoctorSaveComplete(response, status)
 {
-if (status == "success")
-{
-var resultSet = JSON.parse(response);
+	if (status == "success")
+	{
+		var resultSet = JSON.parse(response);
 
-if (resultSet.status.trim() == "success")
-{
-	$("#alertSuccess").text("Successfully saved.");
-	$("#alertSuccess").show();
+		if (resultSet.status.trim() == "success")
+		{
+			$("#alertSuccess").text("Successfully saved.");
+			$("#alertSuccess").show();
 
-	$("#divDocGrid").html(resultSet.data);
-} else if (resultSet.status.trim() == "error")
-{
-	$("#alertError").text(resultSet.data);
-	$("#alertError").show();
-}
+			$("#divDoctorsGrid").html(resultSet.data);
+		} else if (resultSet.status.trim() == "error")
+		{
+			$("#alertError").text(resultSet.data);
+			$("#alertError").show();
+		}
 
-} 
-else if (status == "error")
-{
-	$("#alertError").text("Error while saving.");
-	$("#alertError").show();
-} else
-{
-	$("#alertError").text("Unknown error while saving..");
-	$("#alertError").show();
-}
+	} else if (status == "error")
+	{
+		$("#alertError").text("Error while saving.");
+		$("#alertError").show();
+	} else
+	{
+		$("#alertError").text("Unknown error while saving..");
+		$("#alertError").show();
+	}
 
-$("#hidAppIDSave").val("");
-$("#formAppointment")[0].reset();
+	$("#hiddoctorIDSave").val("");
+	$("#formDoctor")[0].reset();
 }
 
 //UPDATE========================================== 
@@ -84,7 +83,7 @@ $(document).on("click", ".btnUpdate", function(event)
 	//console.log($(this).closest("tr"));
 	//document.getElementById("hiddoctorIDSave").value = "Update";
 	$("#hiddoctorIDSave").val($(this).closest("tr").find('#hidDoctorIDUpdate').val()); 
-	$("#NIC").val($(this).closest("tr").find('td:eq(0)').text());
+	$("#nic").val($(this).closest("tr").find('td:eq(0)').text());
 	$("#gender").val($(this).closest("tr").find('td:eq(1)').text()); 
 	$("#firstName").val($(this).closest("tr").find('td:eq(2)').text());
 	$("#lastName").val($(this).closest("tr").find('td:eq(3)').text()); 
@@ -107,7 +106,7 @@ $(document).on("click", ".btnRemove", function(event)
 	{
 		url : "DoctorAPI",
 		type : "DELETE",
-		data : "doctorID=" + $(this).data("doctorID"),
+		data : "doctorID=" + $(this).data("doctorid"),
 		dataType : "text",
 		complete : function(response, status)
 		{
@@ -127,7 +126,7 @@ function onDoctorDeleteComplete(response, status)
 			$("#alertSuccess").text("Successfully deleted.");   
 			$("#alertSuccess").show(); 
 
-			$("#divItemsGrid").html(resultSet.data);   
+			$("#divDoctorsGrid").html(resultSet.data);   
 			} else if (resultSet.status.trim() == "error")  
 			{    
 				$("#alertError").text(resultSet.data);    
@@ -150,7 +149,7 @@ function onDoctorDeleteComplete(response, status)
 function validationDoctorForm()
 {
 	//NIC
-	if ($("#NIC").val().trim() == "") 
+	if ($("#nic").val().trim() == "") 
 	{   
 		return "Insert NIC."; 
 	} 
@@ -247,13 +246,6 @@ function validationDoctorForm()
 		
 	} 
 	
-	// is boolean value 
-	var valid = $("#valid").val().trim(); 
-	if (!$.isBoolean(valid)) 
-	{   
-		return "Insert a boolean value for the validification."; 
-		
-	} 
 	
 	return true;
 }
