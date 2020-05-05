@@ -169,7 +169,7 @@ public class Doctor {
 			}
 				
 				// Prepare the html table to be displayed
-				output =  "<table border='1'><tr><th>NIC</th><th>gender</th><th>firstName</th><th>lastname</th><th>email</th><th>specification</th><th>contact</th><th>workDate</th><th>workTime</th><th>password</th><th>adminID</th><th>doctorStatus</th><th>Valid</th></tr>";
+				output =  "<table border='1'><tr><th>NIC</th><th>Gender</th><th>First Name</th><th>Last name</th><th>Email</th><th>Specification</th><th>Contact</th><th>Work Date</th><th>Work Time</th><th>Password</th><th>AdminID</th><th>Doctor Status</th><th>Valid</th></tr>";
 				
 				String query = "select * from doctor";
 				Statement stmt = con.createStatement(); 
@@ -211,7 +211,7 @@ public class Doctor {
 					
 					// buttons     
 					output += "<td><input name = 'btnUpdate' " + "type = 'button' value = 'Update'" + "class = 'btnUpdate btn btn-secondary'></td>"
-							+ "<td><input name = 'btnRemove'" + "type='button' value = 'Remove'" + "class ='btnRemove btn btn-danger'" + "data-doctorID='"
+							+ "<td><input name = 'btnRemove'" + "type='button' value = 'Remove'" + "class ='btnRemove btn btn-danger'" + "data-doctorid='"
 							+ doctorID + "'>" + "</td></tr>";
 				}
 				con.close();
@@ -359,7 +359,7 @@ public class Doctor {
 			con.close();
 			
 			String newDoctor = readDoctors();
-			output = "{\"status\":\"success\", \"data\": \"" +  
+			output = "{\"status\":\"success\", \"data\": \"" +    
 					newDoctor + "\"}"; 
 		}
 		catch (Exception e)

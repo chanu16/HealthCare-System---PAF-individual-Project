@@ -44,7 +44,7 @@ public class DoctorAPI extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		String output = doctor.insertDoctor(request.getParameter("NIC"), request.getParameter("gender"), request.getParameter("firstName"),
+		String output = doctor.insertDoctor(request.getParameter("nic"), request.getParameter("gender"), request.getParameter("firstName"),
 				request.getParameter("lastName"), request.getParameter("email"),request.getParameter("specification"),request.getParameter("contact"),
 				request.getParameter("workDate"),request.getParameter("workTime"),request.getParameter("password"),request.getParameter("adminID"),
 				request.getParameter("doctorStatus"),request.getParameter("valid"));
@@ -60,10 +60,20 @@ public class DoctorAPI extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		Map paras = getParasMap(request); 
-		String output = doctor.updateDoctor(paras.get("hiddoctorIDSave").toString(), paras.get("NIC").toString(),paras.get("gender").toString(),
-				paras.get("firstName").toString(),paras.get("lastName").toString(),paras.get("email").toString(),paras.get("specification").toString(),
-				paras.get("contact").toString(),paras.get("workDate").toString(),paras.get("workTime").toString(),paras.get("password").toString(),
-				paras.get("adminID").toString(),paras.get("doctorStatus").toString(),paras.get("valid").toString());
+		String output = doctor.updateDoctor(paras.get("hiddoctorIDSave").toString(),
+				paras.get("nic").toString(),
+				paras.get("gender").toString(),
+				paras.get("firstName").toString(),
+				paras.get("lastName").toString(),
+				paras.get("email").toString(),
+				paras.get("specification").toString(),
+				paras.get("contact").toString(),
+				paras.get("workDate").toString(),
+				paras.get("workTime").toString(),
+				paras.get("password").toString(),
+				paras.get("adminID").toString(),
+				paras.get("doctorStatus").toString(),
+				paras.get("valid").toString());
 		
 				response.getWriter().write(output);
 		// TODO Auto-generated method stub
