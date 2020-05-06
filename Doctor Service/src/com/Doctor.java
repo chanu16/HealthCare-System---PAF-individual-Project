@@ -169,7 +169,7 @@ public class Doctor {
 			}
 				
 				// Prepare the html table to be displayed
-				output =  "<table border='1'><tr><th>NIC</th><th>Gender</th><th>First Name</th><th>Last name</th><th>Email</th><th>Specification</th><th>Contact</th><th>Work Date</th><th>Work Time</th><th>Password</th><th>AdminID</th><th>Doctor Status</th><th>Valid</th></tr>";
+				output =  "<table border='1'><tr><th>NIC</th><th>Gender</th><th>First Name</th><th>Last name</th><th>Email</th><th>Specification</th><th>Contact</th><th>Work Date</th><th>Work Time</th><th>Password</th><th>AdminID</th><th>Doctor Status</th></tr>";  //<th>Valid</th>
 				
 				String query = "select * from doctor";
 				Statement stmt = con.createStatement(); 
@@ -191,7 +191,7 @@ public class Doctor {
 					String password = rs.getString("password");
 					String adminID = Integer.toString(rs.getInt("adminID"));
 					String doctorStatus = rs.getString("doctorStatus");
-					String valid = Boolean.toString(rs.getBoolean("valid"));
+					//String valid = Boolean.toString(rs.getBoolean("valid"));
 					
 					// Add into the html table    
 					output += "<tr><td><input id = 'hidDoctorIDUpdate' name ='hidDoctorIDUpdate' type = 'hidden' value='" + doctorID + "'>" 
@@ -207,7 +207,7 @@ public class Doctor {
 					output += "<td>" + password + "</td>";
 					output += "<td>" + adminID + "</td>";
 					output += "<td>" + doctorStatus + "</td>";	
-					output += "<td>" + valid + "</td>";	
+					//output += "<td>" + valid + "</td>";	
 					
 					// buttons     
 					output += "<td><input name = 'btnUpdate' " + "type = 'button' value = 'Update'" + "class = 'btnUpdate btn btn-secondary'></td>"
@@ -228,7 +228,7 @@ public class Doctor {
 			return output;
 		}
 	
-	public String insertDoctor(String NIC,String gender, String firstName, String lastName,String email,String specification, String contact, String workDate,String workTime,String password, String adminID,String doctorStatus, String valid)
+	public String insertDoctor(String NIC,String gender, String firstName, String lastName,String email,String specification, String contact, String workDate,String workTime,String password, String adminID,String doctorStatus) //String valid)
 	{
 		String output = "";
 		
@@ -242,7 +242,7 @@ public class Doctor {
 			}
 			
 			// create a prepared statement
-			String query = "insert into doctor (`doctorID`, `NIC`, `gender`,  `firstName`, `lastname`, `email`,`specification`,  `contact`, `workDate`,`workTime`,`password`, `adminID`, `doctorStatus`, `valid`)" + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String query = "insert into doctor (`doctorID`, `NIC`, `gender`,  `firstName`, `lastname`, `email`,`specification`,  `contact`, `workDate`,`workTime`,`password`, `adminID`, `doctorStatus`)" /*`valid`)"*/ + "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			
 			PreparedStatement preparedStmt = con.prepareStatement(query); 
 			
@@ -260,7 +260,7 @@ public class Doctor {
 			preparedStmt.setString(11, password);
 			preparedStmt.setInt(12, Integer.parseInt(adminID));
 			preparedStmt.setString(13, doctorStatus );
-			preparedStmt.setBoolean(14, Boolean.parseBoolean(valid));
+			//preparedStmt.setBoolean(14, Boolean.parseBoolean(valid));
 			
 			//excute the statement
 			preparedStmt.execute();
@@ -280,7 +280,7 @@ public class Doctor {
 		return output;
 	}
 	
-	public String updateDoctor(String doctorID,String NIC,String gender, String firstName, String lastName,String email,String specification, String contact, String workDate,String workTime,String password, String adminID,String doctorStatus, String valid)
+	public String updateDoctor(String doctorID,String NIC,String gender, String firstName, String lastName,String email,String specification, String contact, String workDate,String workTime,String password, String adminID,String doctorStatus) //String valid)
 	{
 		String output = "";
 		
@@ -294,7 +294,7 @@ public class Doctor {
 			}
 			
 			//create a prepared statement
-			String query = "UPDATE doctor SET NIC=?, gender=?,firstName=?, lastName=?, email=?,specification=?,  contact=?, workDate=?,workTime=?,password=?, adminID=?, doctorStatus=?, valid=? WHERE doctorID=?";
+			String query = "UPDATE doctor SET NIC=?, gender=?,firstName=?, lastName=?, email=?,specification=?,  contact=?, workDate=?,workTime=?,password=?, adminID=?, doctorStatus=?  WHERE doctorID=?"; //, valid=?
 			
 			PreparedStatement preparedStmt = con.prepareStatement(query); 
 			
@@ -311,8 +311,8 @@ public class Doctor {
 			preparedStmt.setString(10, password);
 			preparedStmt.setInt(11, Integer.parseInt(adminID));
 			preparedStmt.setString(12, doctorStatus);
-			preparedStmt.setInt(14, Integer.parseInt(doctorID));
-			preparedStmt.setBoolean(13, Boolean.getBoolean(valid));
+			//preparedStmt.setBoolean(13, Boolean.getBoolean(valid));
+			preparedStmt.setInt(13, Integer.parseInt(doctorID));
 			
 			//execute the statement
 			preparedStmt.execute();

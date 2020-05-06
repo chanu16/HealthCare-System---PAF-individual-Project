@@ -1,0 +1,37 @@
+
+
+java:S1989Z"PHandle the following exception that could be thrown by "getWriter": IOException.(µïõºH°RMINORZVULNERABILITY
+…
+java:S2293a"YReplace the type specification in this constructor call with the diamond operator ("<>").(«üÎŒH¸RMINORZ
+CODE_SMELL
+Y	java:S108r")Either remove or fill this block of code.(ÒÌâ–øÿÿÿÿH¶RMAJORZ
+CODE_SMELL
+Œ
+java:S1128	"TRemove this unnecessary import: same package classes are always implicitly imported.(ë´ù†ÿÿÿÿÿ8¿›§¡ž.H­RMINORZ
+CODE_SMELL
+l	java:S125&"<This block of commented-out lines of code should be removed.(ü“ñûþÿÿÿÿH¯RMAJORZ
+CODE_SMELL
+k
+java:S1161<":Add the "@Override" annotation above this method signature(‚Ü°ŽøÿÿÿÿH¬RMAJORZ
+CODE_SMELL
+k
+java:S1161U":Add the "@Override" annotation above this method signature(Ñ­ÑçùÿÿÿÿHµRMAJORZ
+CODE_SMELL
+}
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(š±öH´RMAJORZBUG
+
+java:S19894"PHandle the following exception that could be thrown by "getWriter": IOException.(µïõºH·RMINORZVULNERABILITY
+k
+java:S1161$":Add the "@Override" annotation above this method signature(Ïû©ÖûÿÿÿÿH«RMAJORZ
+CODE_SMELL
+f
+java:S1161-":Add the "@Override" annotation above this method signature(»¬£H³RMAJORZ
+CODE_SMELL
+
+java:S1989N"PHandle the following exception that could be thrown by "getWriter": IOException.(µïõºH®RMINORZVULNERABILITY
+l	java:S1256"<This block of commented-out lines of code should be removed.(®—¨´ùÿÿÿÿH±RMAJORZ
+CODE_SMELL
+O
+java:S1128
+"Remove this duplicated import.(ªº»ÚýÿÿÿÿH²RMINORZ
+CODE_SMELL

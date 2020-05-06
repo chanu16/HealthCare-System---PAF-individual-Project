@@ -1,0 +1,22 @@
+
+}	java:S117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×H½RMINORZ
+CODE_SMELL
+j	java:S106•"9Replace this use of System.out or System.err by a logger.(ïù¯¯ûÿÿÿÿHÁRMAJORZ
+CODE_SMELL
+}	java:S117¶"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€ş—ÇHÃRMINORZ
+CODE_SMELL
+j	java:S106ñ"9Replace this use of System.out or System.err by a logger.(ïù¯¯ûÿÿÿÿHÀRMAJORZ
+CODE_SMELL
+}	java:S117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨®ª™HÅRMINORZ
+CODE_SMELL
+_
+java:S4925"-Remove this "Class.forName()", it is useless.(¹µÖÁüÿÿÿÿHÄRMAJORZ
+CODE_SMELL
+`
+java:S2115“")Add password protection to this database.(´ªø²ùÿÿÿÿH¼RBLOCKERZVULNERABILITY
+~	java:S116	"NRename this field "NIC" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù¡µêüÿÿÿÿHÂRMINORZ
+CODE_SMELL
+j	java:S106á"9Replace this use of System.out or System.err by a logger.(ïù¯¯ûÿÿÿÿH¾RMAJORZ
+CODE_SMELL
+j	java:S106É"9Replace this use of System.out or System.err by a logger.(ïù¯¯ûÿÿÿÿH¿RMAJORZ
+CODE_SMELL

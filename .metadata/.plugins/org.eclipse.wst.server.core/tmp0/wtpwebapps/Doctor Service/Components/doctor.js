@@ -95,7 +95,7 @@ $(document).on("click", ".btnUpdate", function(event)
 	$("#password").val($(this).closest("tr").find('td:eq(9)').text());
 	$("#adminID").val($(this).closest("tr").find('td:eq(10)').text());
 	$("#doctorStatus").val($(this).closest("tr").find('td:eq(11)').text());
-	$("#valid").val($(this).closest("tr").find('td:eq(12)').text());
+	//$("#valid").val($(this).closest("tr").find('td:eq(12)').text());
 	
 }); 
 
@@ -240,11 +240,11 @@ function validationDoctorForm()
 	} 
 	
 	//valid
-	if ($("#valid").val().trim() == "") 
+	/*if ($("#valid").val().trim() == "") 
 	{  
 		return "Insert the validation.";
 		
-	} 
+	} */
 	
 	
 	return true;
