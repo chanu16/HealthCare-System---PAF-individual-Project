@@ -47,7 +47,8 @@ public class DoctorAPI extends HttpServlet {
 		String output = doctor.insertDoctor(request.getParameter("nic"), request.getParameter("gender"), request.getParameter("firstName"),
 				request.getParameter("lastName"), request.getParameter("email"),request.getParameter("specification"),request.getParameter("contact"),
 				request.getParameter("workDate"),request.getParameter("workTime"),request.getParameter("password"),request.getParameter("adminID"),
-				request.getParameter("doctorStatus"),request.getParameter("valid"));
+				request.getParameter("doctorStatus")); 
+			//request.getParameter("valid"));
 		
 				response.getWriter().write(output);
 		// TODO Auto-generated method stub
@@ -65,15 +66,15 @@ public class DoctorAPI extends HttpServlet {
 				paras.get("gender").toString(),
 				paras.get("firstName").toString(),
 				paras.get("lastName").toString(),
-				paras.get("email").toString(),
+				paras.get("email").toString().replace("%40", "@"),
 				paras.get("specification").toString(),
 				paras.get("contact").toString(),
 				paras.get("workDate").toString(),
 				paras.get("workTime").toString(),
 				paras.get("password").toString(),
 				paras.get("adminID").toString(),
-				paras.get("doctorStatus").toString(),
-				paras.get("valid").toString());
+				paras.get("doctorStatus").toString());
+				//paras.get("valid").toString());
 		
 				response.getWriter().write(output);
 		// TODO Auto-generated method stub

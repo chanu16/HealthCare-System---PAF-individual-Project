@@ -18,31 +18,42 @@
 
 				<form id="formDoctor" name="formDoctor">
 					NIC: <input id="nic" name="nic" type="text"
-						class="form-control form-control-sm"> <br> Gender: <input
+						class="form-control form-control-sm"> <br>
+						
+					 Gender: <input
 						id="gender" name="gender" type="text"
-						class="form-control form-control-sm"> <br> First
-					Name: <input id="firstName" name="firstName" type="text"
-						class="form-control form-control-sm"> <br> Last Name:
-					<input id="lastName" name="lastName" type="text"
-						class="form-control form-control-sm"> <br> Email: <input
+						class="form-control form-control-sm"> <br> 
+						
+						First Name: <input id="firstName" name="firstName" type="text"
+						class="form-control form-control-sm"> <br> 
+						Last Name: <input id="lastName" name="lastName" type="text"
+						class="form-control form-control-sm"> <br>
+						 Email: <input
 						id="email" name="email" type="text"
 						class="form-control form-control-sm"> <br>
 					Specification: <input id="specification" name="specification"
 						type="text" class="form-control form-control-sm"> <br>
 					Contact: <input id="contact" name="contact" type="text"
-						class="form-control form-control-sm"> <br> Work Date:
+						class="form-control form-control-sm"> <br> 
+						Work Date:
 					<input id="workDate" name="workDate" type="text"
-						class="form-control form-control-sm"> <br> Work Time:
+						class="form-control form-control-sm"> <br> 
+						Work Time:
 					<input id="workTime" name="workTime" type="text"
-						class="form-control form-control-sm"> <br> Password:
+						class="form-control form-control-sm"> <br> 
+						Password:
 					<input id="password" name="password" type="text"
-						class="form-control form-control-sm"> <br> Admin ID:
+						class="form-control form-control-sm"> <br>
+						 Admin ID:
 					<input id="adminID" name="adminID" type="text"
-						class="form-control form-control-sm"> <br> Doctor
+						class="form-control form-control-sm"> <br> 
+						Doctor
 					Status: <input id="doctorStatus" name="doctorStatus" type="text"
-						class="form-control form-control-sm"> <br> Valid: <input
-						id="valid" name="valid" type="text"
-						class="form-control form-control-sm"> <br> <input
+						class="form-control form-control-sm"> <br>
+						
+						
+						
+						 <input
 						id="btnSave" name="btnSave" type="button" value="Save"
 						class="btn btn-primary"> <input type="hidden"
 						id="hiddoctorIDSave" name="hiddoctorIDSave" value="">
